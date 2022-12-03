@@ -1,6 +1,3 @@
-import telegram
-import requests
-from config import telegram_token, chat_id
 import yfinance as yf
 from datetime import timedelta
 from advanced_tools import calculate_targets, calculate_stoploss
@@ -10,7 +7,6 @@ from advanced_tools import calculate_targets, calculate_stoploss
 # you can install it by : pip install python-telegram-bot
 # then:                   import telegram
 
-tadawul_telegram_bot = telegram.Bot(telegram_token)
 
 messages = {}
 
@@ -139,8 +135,4 @@ def create_AR_message( name, side, symbol, signal_price, targets, stoploss, risk
       {risk_statement}
     """
         return message        
-
-def send_message(text):
-    url = f"https://api.telegram.org/bot{telegram_token}/sendMessage?chat_id={chat_id}&text={text}"
-    print(requests.get(url).json())
     

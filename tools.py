@@ -45,6 +45,7 @@ def is_unique(symbol, side, at):
 #
 
 
+
 def get_tadawul_data(symbol, timeframe, period):
     """
     decided that we can just get the data one time, 
